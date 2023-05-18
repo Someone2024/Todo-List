@@ -1,0 +1,25 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1%;
+  width: 100%;
+  background-color: var(--primary-dark);
+}
+
+.fa,
+.fas {
+  font-weight: 900;
+}
+
+.fa-check-double {
+  font-size: 40px;
+}
+i {
+  margin-right: 10px;
+}
+
+.page-name {
+    font-size: 40px;
+    color: var(--primary-light);
+}
