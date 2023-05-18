@@ -1,6 +1,6 @@
 :root {
-    --primary-dark: #333;
-    --secondary-dark: #444;
+    --primary-dark: rgb(51, 51, 51);
+    --secondary-dark: rgb(68, 68, 68);
     --primary-light: #eee;
     --secondary-light: #ddd;
     box-sizing: border-box;
@@ -22,7 +22,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 33.3%;
-    color: var(--primary-light);
+    margin-top: 0.1%;
+    color: var(--primary-dark);
     font-size: 1.2rem;
 }
