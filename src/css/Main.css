@@ -1,0 +1,32 @@
+.main{
+    display: flex;
+    height: 76vh;
+}
+
+.side-bar{
+    width: 300px;
+    min-width: 250px;
+    padding: 20px;
+    background-color: var(--secondary-light);
+}
+
+.default-projects, .created-projects{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.projects{
+    color: var(--secondary-dark);
+}
+
+.item{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--secondary-dark);
+}
