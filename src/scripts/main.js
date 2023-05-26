@@ -28,7 +28,7 @@ class Project {
       const taskStatus = document.createElement("input");
       taskStatus.type = "checkbox";
       task.textContent = this.Todos[i].title;
-      task.classList.add("task")
+      task.classList.add("task");
       deleteTask.textContent = "X";
 
       deleteTask.addEventListener("click", () => {
@@ -45,27 +45,41 @@ class Project {
 const ProjectDiv = document.querySelector(".todos");
 
 function CreateProject(title) {
+
   const newProject = new Project();
   const ProjectContainer = document.createElement("div");
+
   const projectName = document.createElement("h1");
   projectName.textContent = title;
   projectName.classList.add("project-name");
+
   const createTaskButton = document.createElement("button");
-  createTaskButton.innerHTML = " <i class='fas fa-plus' aria-hidden='true'></i> Add Task";
+  createTaskButton.innerHTML =
+    " <i class='fas fa-plus' aria-hidden='true'></i> Add Task";
   createTaskButton.classList.add("create-task");
 
   createTaskButton.addEventListener("click", () => {
+
+    const inputContainer = document.createElement("div");
+    inputContainer.classList.add("input-container")
+
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.classList.add("buttons-container")
+
     const input = document.createElement("input");
+    input.classList.add("input-task");
+
     const addButton = document.createElement("button");
     addButton.textContent = "Add";
+    addButton.classList.add("add-button");
+
     const cancelButton = document.createElement("button");
+    cancelButton.classList.add("cancel-button");
     cancelButton.textContent = "Cancel";
 
     const Cancel = () => {
       ProjectContainer.append(projectName, createTaskButton);
-      ProjectContainer.removeChild(input);
-      ProjectContainer.removeChild(addButton);
-      ProjectContainer.removeChild(cancelButton);
+      ProjectContainer.removeChild(inputContainer);
     };
 
     addButton.addEventListener("click", () => {
@@ -82,8 +96,10 @@ function CreateProject(title) {
       Cancel();
     });
 
+    buttonsContainer.append(addButton, cancelButton)
+    inputContainer.append(input, buttonsContainer);
     ProjectContainer.removeChild(createTaskButton);
-    ProjectContainer.append(input, addButton, cancelButton);
+    ProjectContainer.append(inputContainer); //<-- append the input container here
   });
 
   ProjectContainer.append(projectName, createTaskButton);
@@ -112,7 +128,6 @@ function SwitchTabs() {
 
   const verifyTab = () => {
     if (CurrentTab === "inbox") {
-
       Today.style.display = "none";
       Weekly.style.display = "none";
       Inbox.style.display = "block";
@@ -120,9 +135,7 @@ function SwitchTabs() {
       InboxTab.style.backgroundColor = selectedColorTab;
       TodayTab.style.backgroundColor = normalColorTab;
       WeeklyTab.style.backgroundColor = normalColorTab;
-
     } else if (CurrentTab === "today") {
-
       Inbox.style.display = "none";
       Weekly.style.display = "none";
       Today.style.display = "block";
@@ -130,10 +143,7 @@ function SwitchTabs() {
       InboxTab.style.backgroundColor = normalColorTab;
       TodayTab.style.backgroundColor = selectedColorTab;
       WeeklyTab.style.backgroundColor = normalColorTab;
-
-
     } else if (CurrentTab === "weekly") {
-
       Inbox.style.display = "none";
       Today.style.display = "none";
       Weekly.style.display = "block";
