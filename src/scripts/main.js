@@ -28,6 +28,7 @@ class Project {
       const taskStatus = document.createElement("input");
       taskStatus.type = "checkbox";
       task.textContent = this.Todos[i].title;
+      task.classList.add("task")
       deleteTask.textContent = "X";
 
       deleteTask.addEventListener("click", () => {
@@ -48,8 +49,10 @@ function CreateProject(title) {
   const ProjectContainer = document.createElement("div");
   const projectName = document.createElement("h1");
   projectName.textContent = title;
+  projectName.classList.add("project-name");
   const createTaskButton = document.createElement("button");
-  createTaskButton.textContent = "add task";
+  createTaskButton.innerHTML = " <i class='fas fa-plus' aria-hidden='true'></i> Add Task";
+  createTaskButton.classList.add("create-task");
 
   createTaskButton.addEventListener("click", () => {
     const input = document.createElement("input");
