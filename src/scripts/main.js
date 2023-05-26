@@ -71,7 +71,7 @@ function CreateProject(title) {
         return;
       }
       newProject.createTodo(input.value);
-      newProject.displayTodos(ProjectDiv);
+      newProject.displayTodos(ProjectContainer);
       Cancel();
     });
 
@@ -95,6 +95,8 @@ function CreateProject(title) {
 const Inbox = CreateProject("Inbox");
 const Today = CreateProject("Today");
 const Weekly = CreateProject("Weekly");
+
+SwitchTabs();
 
 function SwitchTabs() {
   let CurrentTab = "inbox";
@@ -133,5 +135,3 @@ function SwitchTabs() {
     verifyTab();
   });
 }
-
-SwitchTabs();
