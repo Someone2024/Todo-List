@@ -24,9 +24,9 @@ class Project {
   displayTodos = (tasksContainer) => {
     for (let i = 0; i < this.Todos.length; i++) {
       const task = document.createElement("button");
-      task.textContent = this.Todos[i].title
+      task.textContent = this.Todos[i].title;
       tasksContainer.appendChild(task);
-      console.log(this.Todos[i])
+      console.log(this.Todos[i]);
     }
   };
 }
@@ -35,28 +35,29 @@ function CreateProject(title) {
   const newProject = new Project();
   const ProjectDiv = document.querySelector(".todos");
   const projectName = document.createElement("h1");
-  projectName.textContent = title
+  projectName.textContent = title;
   const createTaskButton = document.createElement("button");
-  createTaskButton.textContent = "add task"
+  createTaskButton.textContent = "add task";
 
   createTaskButton.addEventListener("click", () => {
     const input = document.createElement("input");
     const addButton = document.createElement("button");
-    addButton.textContent = "Add"
+    addButton.textContent = "Add";
     const cancelButton = document.createElement("button");
-    cancelButton.textContent = "Cancel"
+    cancelButton.textContent = "Cancel";
 
     const Cancel = () => {
-      ProjectDiv.append(projectName,createTaskButton);
+      ProjectDiv.append(projectName, createTaskButton);
       ProjectDiv.removeChild(input);
       ProjectDiv.removeChild(addButton);
       ProjectDiv.removeChild(cancelButton);
     };
 
     addButton.addEventListener("click", () => {
+      if(!input.value) return
       newProject.createTodo(input.value);
-      newProject.displayTodos(ProjectDiv)
-      Cancel()
+      newProject.displayTodos(ProjectDiv);
+      Cancel();
     });
 
     cancelButton.addEventListener("click", () => {
@@ -67,8 +68,8 @@ function CreateProject(title) {
     ProjectDiv.append(input, addButton, cancelButton);
   });
 
-  ProjectDiv.append(projectName, createTaskButton)
-  console.log(projectName)
+  ProjectDiv.append(projectName, createTaskButton);
+  console.log(projectName);
 }
 
-CreateProject("Today", 2)
+CreateProject("Today", 2);
