@@ -1,0 +1,26 @@
+.todos {
+  background-color: var(--primary-light);
+  width: 100%;
+  padding-left: 10%;
+  padding-top: 1%;
+}
+
+.project-name,
+.create-task {
+  color: var(--primary-dark);
+}
+
+.create-task {
+  width: 90%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-left: 15px;
+  text-align: left;
+  border: none;
+  font-size: 1rem;
+}
+
+.create-task:hover {
+  background-color: var(--secondary-light);
+}
