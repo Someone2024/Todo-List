@@ -104,16 +104,19 @@ function SwitchTabs() {
   const InboxTab = document.querySelector(".inbox");
   const TodayTab = document.querySelector(".today");
   const WeeklyTab = document.querySelector(".weekly");
+  const colorTab = "rgba(221, 221, 221)"
 
   const verifyTab = () => {
     if (CurrentTab === "inbox") {
       Today.style.display = "none";
       Weekly.style.display = "none";
       Inbox.style.display = "block";
+      InboxTab.style.backgroundColor = ""
     } else if (CurrentTab === "today") {
       Inbox.style.display = "none";
       Weekly.style.display = "none";
       Today.style.display = "block";
+      InboxTab.style.backgroundColor = "#ddd"
     } else if (CurrentTab === "weekly") {
       Inbox.style.display = "none";
       Today.style.display = "none";
