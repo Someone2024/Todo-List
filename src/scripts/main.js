@@ -1,7 +1,6 @@
 class _Todo {
-  constructor(title, dueDate, description, priority) {
+  constructor(title) {
     this.title = title;
-    this.dueDate = dueDate;
     this.isDone = false;
     // this.description = description;
     // this.priority = priority;
@@ -15,49 +14,61 @@ class Project {
     this.Todos = [];
   }
 
-  createTodo(title, dueDate) {
-    const newTodo = new _Todo(title, dueDate);
+  createTodo(title) {
+    const newTodo = new _Todo(title);
     this.Todos = [newTodo];
 
     return newTodo;
   }
+
+  displayTodos = (tasksContainer) => {
+    for (let i = 0; i < this.Todos.length; i++) {
+      const task = document.createElement("button");
+      task.textContent = this.Todos[i].title
+      tasksContainer.appendChild(task);
+      console.log(this.Todos[i])
+    }
+  };
 }
 
-function CreateProject() {
+function CreateProject(title) {
   const newProject = new Project();
-  const ProjectDiv = document.getElementsByClassName("todos");
+  const ProjectDiv = document.querySelector(".todos");
   const projectName = document.createElement("h1");
+  projectName.textContent = title
   const createTaskButton = document.createElement("button");
+  createTaskButton.textContent = "add task"
 
   createTaskButton.addEventListener("click", () => {
     const input = document.createElement("input");
-    const addButton = document.createElement("input");
+    const addButton = document.createElement("button");
+    addButton.textContent = "Add"
     const cancelButton = document.createElement("button");
-    addButton.type, (cancelButton.type = "button");
+    cancelButton.textContent = "Cancel"
 
     const Cancel = () => {
-      Project.remove(input, addButton, cancelButton);
-      Project.append(createTaskButton);
+      ProjectDiv.append(projectName,createTaskButton);
+      ProjectDiv.removeChild(input);
+      ProjectDiv.removeChild(addButton);
+      ProjectDiv.removeChild(cancelButton);
     };
 
     addButton.addEventListener("click", () => {
-      const newTodo = newProject.createTodo(input.value);
-      displayTodos()
-      Cancel();
+      newProject.createTodo(input.value);
+      newProject.displayTodos(ProjectDiv)
+      Cancel()
     });
 
     cancelButton.addEventListener("click", () => {
       Cancel();
     });
 
-    const displayTodos = () => {
-      for (let i = 0; i < newProject.Todos.length; index++) {
-        const task = document.createElement("button");
-        task.textContent = newProject.Todos[i].title
-      }
-    };
-
     ProjectDiv.removeChild(createTaskButton);
     ProjectDiv.append(input, addButton, cancelButton);
   });
+
+  ProjectDiv.append(projectName, createTaskButton)
+  console.log(projectName)
 }
+
+CreateProject("Today", 2)
