@@ -23,9 +23,19 @@ class Project {
 
   displayTodos = (tasksContainer) => {
     for (let i = 0; i < this.Todos.length; i++) {
-      const task = document.createElement("button");
+      const task = document.createElement("div");
+      const deleteTask = document.createElement("button");
+      const taskStatus = document.createElement("input");
+      taskStatus.type = "checkbox"
       task.textContent = this.Todos[i].title;
-      tasksContainer.appendChild(task);
+      deleteTask.textContent = "X"
+
+      deleteTask.addEventListener("click", ()=>{
+        tasksContainer.removeChild(task);
+        tasksContainer.removeChild(deleteTask);
+        tasksContainer.removeChild(taskStatus);
+      });
+      tasksContainer.append(taskStatus,task, deleteTask);
       console.log(this.Todos[i]);
     }
   };
@@ -54,7 +64,10 @@ function CreateProject(title) {
     };
 
     addButton.addEventListener("click", () => {
-      if(!input.value) return
+      if (!input.value) {
+        alert("Your task cannot be empty!");
+        return;
+      }
       newProject.createTodo(input.value);
       newProject.displayTodos(ProjectDiv);
       Cancel();
@@ -72,4 +85,8 @@ function CreateProject(title) {
   console.log(projectName);
 }
 
-CreateProject("Today", 2);
+//create the tab switch logic with a variable Tab which will store the value of what tab should be rendering
+
+const Inbox = CreateProject("Inbox");
+const Today = CreateProject("Today");
+const Weekly = CreateProject("Weekly");
