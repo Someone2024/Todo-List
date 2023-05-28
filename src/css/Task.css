@@ -1,0 +1,30 @@
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  height: 6vh;
+  margin-top: 1%;
+}
+
+.ex{
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.delete-task {
+  border: none;
+  background-color: none;
+  font-weight: 900;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
