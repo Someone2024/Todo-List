@@ -23,21 +23,38 @@ class Project {
 
   displayTodos = (tasksContainer) => {
     for (let i = 0; i < this.Todos.length; i++) {
-      const task = document.createElement("div");
+      const task = document.createElement("button");
+
       const deleteTask = document.createElement("button");
       const taskStatus = document.createElement("input");
+      const taskTitle = document.createElement("p");
+      taskTitle.classList.add("title");
+
+      const taskLeft = document.createElement("div");
+      const taskRight = document.createElement("div");
+      
+      taskLeft.classList.add("left");
+      taskRight.classList.add("right");
+
       taskStatus.type = "checkbox";
-      task.textContent = this.Todos[i].title;
+      taskTitle.textContent = this.Todos[i].title;
       task.classList.add("task");
-      deleteTask.textContent = "X";
+
+      taskLeft.append(taskStatus, taskTitle);
+      taskRight.append(deleteTask);
+
+      task.append(taskLeft, taskRight);
+      
+      deleteTask.innerHTML = "<p class='ex fas fa-times' aria-hidden='true'></p>";
+      deleteTask.classList.add("delete-task");
 
       deleteTask.addEventListener("click", () => {
         tasksContainer.removeChild(task);
         tasksContainer.removeChild(deleteTask);
         tasksContainer.removeChild(taskStatus);
       });
-      tasksContainer.append(taskStatus, task, deleteTask);
-      console.log(this.Todos[i]);
+
+      tasksContainer.appendChild(task);
     }
   };
 }
@@ -89,6 +106,7 @@ function CreateProject(title) {
       }
       newProject.createTodo(input.value);
       newProject.displayTodos(ProjectContainer);
+      ProjectContainer.append(projectName, createTaskButton);
       Cancel();
     });
 
@@ -99,17 +117,14 @@ function CreateProject(title) {
     buttonsContainer.append(addButton, cancelButton)
     inputContainer.append(input, buttonsContainer);
     ProjectContainer.removeChild(createTaskButton);
-    ProjectContainer.append(inputContainer); //<-- append the input container here
+    ProjectContainer.append(inputContainer); 
   });
 
   ProjectContainer.append(projectName, createTaskButton);
   ProjectDiv.appendChild(ProjectContainer);
-  console.log(projectName);
 
   return ProjectContainer;
 }
-
-//create the tab switch logic with a variable Tab which will store the value of what tab should be rendering
 
 const Inbox = CreateProject("Inbox");
 const Today = CreateProject("Today");
