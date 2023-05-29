@@ -23,9 +23,10 @@ class Project {
 
   displayTodos = (tasksContainer) => {
     for (let i = 0; i < this.Todos.length; i++) {
-      const task = document.createElement("button");
-
+      const task = document.createElement("button");    
+      
       const deleteTask = document.createElement("button");
+
       const taskStatus = document.createElement("input");
       const taskTitle = document.createElement("p");
       taskTitle.classList.add("title");
