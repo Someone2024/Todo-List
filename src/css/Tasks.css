@@ -28,7 +28,7 @@
   width: 90%;
 }
 
-.create-task:hover, .task:hover {
+.create-task:hover, .task:hover, .ex {
   background-color: var(--secondary-light);
 }
 
