@@ -49,12 +49,18 @@ class Project {
       deleteTask.classList.add("delete-task");
 
       deleteTask.addEventListener("click", () => {
-        tasksContainer.removeChild(task);
-        tasksContainer.removeChild(deleteTask);
-        tasksContainer.removeChild(taskStatus);
+        task.remove()        
       });
 
-      tasksContainer.appendChild(task);
+      taskStatus.addEventListener("click", ()=>{
+        if(taskStatus.checked) {
+          taskTitle.innerHTML = `<del>${this.Todos[i].title}</del>` 
+        }else{
+          taskTitle.textContent = this.Todos[i].title;
+        }
+      })
+
+      tasksContainer.insertAdjacentElement("afterend", task);
     }
   };
 }
