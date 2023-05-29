@@ -7,12 +7,12 @@
   margin-top: 1%;
 }
 
-.ex{
-    font-size: 0.9rem;
-    cursor: pointer;
-    height: 6vh;
-    display: flex;
-    align-items: center;
+.ex {
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-light);
 }
 
 .delete-task {
@@ -20,13 +20,10 @@
   background-color: none;
   font-weight: 900;
   padding: 0;
-  display: flex;
-  justify-content: center;
 }
 
-
 .left,
-.right {
+.right, .delete-task {
   display: flex;
   align-items: center;
   justify-content: center;
