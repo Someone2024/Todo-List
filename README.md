@@ -7,7 +7,6 @@ The Simple Todo List App is a minimalist task management application that helps 
 - **Create tasks:** Add tasks to your list by entering a descriptive title.
 - **Complete tasks:** Mark tasks as complete when they are done.
 - **Delete tasks:** Remove completed or unnecessary tasks from your list.
-- **Prioritize tasks:** Arrange tasks in order to highlight important items.
 
 ## Usage
 
