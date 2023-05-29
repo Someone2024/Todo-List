@@ -13,11 +13,13 @@
   color: var(--primary-dark);
 }
 
-.create-task, .input-container {
-    width: 80%;
+.create-task,
+.input-container {
+  width: 80%;
 }
 
-.create-task, .task {
+.create-task,
+.task {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -28,48 +30,52 @@
   width: 90%;
 }
 
-.create-task:hover, .task:hover, .ex {
+.create-task:hover,
+.task:hover,
+.ex:hover {
   background-color: var(--secondary-light);
 }
 
-.input-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
 }
 
-.input-task{
-    border: 1px solid #aaa;
-    outline: none;
-    padding: 10px;
-    border-radius: 5px;
+.input-task {
+  border: 1px solid #aaa;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.add-button, .cancel-button {
-    border: 1px solid #99dd99;
-    background-color: #aaffaa;
-    font-weight: bold;
-    font-size: 1rem;
-    width: 49%;
-    padding: 1.5% 0 1.5% 0;
-    border-radius: 3px;
-    cursor: pointer;
+.add-button,
+.cancel-button {
+  border: 1px solid #99dd99;
+  background-color: #aaffaa;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 49%;
+  padding: 1.5% 0 1.5% 0;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
-.cancel-button{
-    background-color: #ffbebe;
-    border: 1px solid #eeadad;
+.cancel-button {
+  background-color: #ffbebe;
+  border: 1px solid #eeadad;
 }
 
-.add-button:hover, .cancel-button:hover{
-    filter: brightness(90%);
+.add-button:hover,
+.cancel-button:hover {
+  filter: brightness(90%);
 }
 
 .buttons-container {
-    width: 100%;
-    margin-top: 1%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
