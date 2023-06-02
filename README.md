@@ -1,6 +1,6 @@
 # Simple Todo List App
 
-The Simple Todo List App is a minimalist task management application that helps you keep track of your to-do items in a simple way manner. With its straightforward interface and essential features, it allows you to stay organized and focused on your tasks.
+The Simple Todo List App is a minimalist task management application that helps you keep track of your to-do items in a simple way.
 
 ## Features
 
